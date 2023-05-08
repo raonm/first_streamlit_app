@@ -34,14 +34,14 @@ try:
     else:
       fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
       fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-      #fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
       streamlit.dataframe(fruityvice_normalized)
   except URLError as e:
     streamlit.error()
 # import requests
 
-#fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+# fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
+# fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 # Take the json version of the data and normalizes it
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # output it to screen as a table
